@@ -9,7 +9,7 @@ int	ft_atoi(char *str)
 	num = 0;
 	while (*str == '+' || *str == '-')
 	{
-		if (*str = '-')
+		if (*str == '-')
 			m++;
 		str++;
 	}
@@ -79,32 +79,31 @@ int	make(char *s1, char *sep, char *s2)
 {
 	int num1;
 	int num2;
-	int rez;
 
 	num1 = ft_atoi(s1);
 	num2 = ft_atoi(s2);
 	if (*sep == '+')
-		rez = num1 + num2;
+		return (num1 + num2);
 	if (*sep == '-')
-		rez = num1 - num2;
+		return (num1 - num2);
 	if (*sep == '/')
 	{
 		if (num2 != 0)
-			rez = num1 / num2;
-		else
+			return (num1 / num2);
+		else	
 			ft_putstr("Stop : division by zero\n");
 	}
 	if (*sep == '%')
 	{
 		if (num2 != 0)
 
-			rez = num1 % num2;
+			return (num1 % num2);
 		else
 			ft_putstr("Stop : modulo by zero\n");
 	}
 	if (*sep == '*')
-		rez = num1 * num2;
-	return (rez);
+		return (num1 * num2);
+	return (0);
 }
 
 int		main(int n, char *arg[])

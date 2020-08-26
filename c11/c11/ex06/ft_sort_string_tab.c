@@ -1,15 +1,5 @@
 #include <stdio.h>
 
-int ft_strlen(char **str)
-{
-	int	i;
-	
-	i = 0;
-	while (str[i] != NULL)
-		i++;
-	return (i);
-}
-
 int ft_strcmp(char *s1, char *s2)
 {
 	int i;
@@ -31,14 +21,10 @@ void ft_sort_string_tab(char **tab)
 	char *buf;
 	int size;
 
-	i = 0;
 	size = 0;
-	while (*tab != NULL)
-	{
+	while (tab[size] != NULL)
 		size++;
-		tab++;
-	}
-	//printf("%d\n", size);
+	i = 0;
 	while (i < size)
 	{
 		while (i < (size - 1))
@@ -58,11 +44,11 @@ void ft_sort_string_tab(char **tab)
 
 int		main(void)
 {
-	char *tab[] = {"a", "b", "c"};
+	char *tab[] = {"a2", "a1", NULL};
 	int i;
 	
 	ft_sort_string_tab(tab);
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 2; i++)
 		printf("%s\n", tab[i]);
 	return (0);
 }
